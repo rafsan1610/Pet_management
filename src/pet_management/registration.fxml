@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="pet_management.RegistrationController">
+   <children>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #BFD8FF;" text="Pet management Sign Up">
+         <font>
+            <Font name="Arial Bold Italic" size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="testF_3" layoutX="210.0" layoutY="105.0" prefHeight="34.0" prefWidth="150.0" promptText="full name" />
+      <TextField fx:id="testF_4" layoutX="210.0" layoutY="154.0" prefHeight="34.0" prefWidth="150.0" promptText="email" />
+      <TextField fx:id="testF_5" layoutX="210.0" layoutY="204.0" prefHeight="34.0" prefWidth="150.0" promptText="create username" />
+      <TextField fx:id="testF_6" layoutX="210.0" layoutY="253.0" prefHeight="34.0" prefWidth="150.0" promptText="create password" />
+      <Button fx:id="btn3" layoutX="251.0" layoutY="307.0" mnemonicParsing="false" onAction="#SignUpp" text="Sign up" />
+      <Button fx:id="btn4" layoutX="522.0" layoutY="92.0" mnemonicParsing="false" onAction="#backsignin" text="sign in" />
+   </children>
+</AnchorPane>
