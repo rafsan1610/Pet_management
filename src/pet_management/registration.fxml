@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="pet_management.RegistrationController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pet_management.RegistrationController">
    <children>
       <Label alignment="CENTER" layoutY="-1.0" prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #BFD8FF;" text="Pet management Sign Up">
          <font>
