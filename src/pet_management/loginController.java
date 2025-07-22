@@ -1,6 +1,11 @@
 package pet_management;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +22,7 @@ public class LoginController implements Initializable {
     @FXML
     private TextField textF_1; // Username Field
     @FXML
-    private TextField textF_2; // Password Field
+    private TextField textF_2; // Password Field (using TextField instead of PasswordField)
     @FXML
     private Button btn1; // Login Button
     @FXML
@@ -25,22 +30,34 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
     }
 
     @FXML
     private void sign_in(ActionEvent event) {
-        String username = textF_1.getText();
-        String password = textF_2.getText();
+        String username = textF_1.getText().trim();
+        String password = textF_2.getText().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
             showAlert(AlertType.ERROR, "Login Error", "Please enter username and password.");
             return;
         }
 
-        if (username.equals("rafsan") && password.equals("1234")) {
-            try {
-           
+        Connection conn = null;
+        try {
+            conn = DatabaseConnection.getConnection();
+
+            if (conn == null || conn.isClosed()) {
+                showAlert(AlertType.ERROR, "Database Error", "Failed to connect to the database.");
+                return;
+            }
+
+            String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
                 Parent root = loader.load();
                 DashboardController dashboardController = loader.getController();
@@ -49,13 +66,18 @@ public class LoginController implements Initializable {
                 stage.setScene(new Scene(root));
                 stage.setTitle("Pet Management Dashboard");
                 stage.show();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                showAlert(AlertType.ERROR, "Error", "Failed to load dashboard.");
+            } else {
+                showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
             }
-        } else {
-            showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+            showAlert(AlertType.ERROR, "Error", "Login failed: " + e.getMessage());
+        } finally {
+            try {
+                if (conn != null && !conn.isClosed()) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 

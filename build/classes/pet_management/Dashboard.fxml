@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="947.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="pet_management.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="947.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pet_management.DashboardController">
    <children>
       <Label alignment="CENTER" layoutY="-1.0" prefHeight="80.0" prefWidth="947.0" style="-fx-background-color: #BFD8FF;" text="Welcome To Pet management System">
          <font>
