@@ -38,6 +38,10 @@ public class DashboardController implements Initializable {
 
     private ObservableList<Pet> petList = FXCollections.observableArrayList();
     private int selectedPetId = -1;
+    @FXML
+    private TextField searchfield;
+    @FXML
+    private Button btn9;
 
     public void setUserName(String name) {
         labelname.setText("Welcome, " + name);
@@ -236,4 +240,29 @@ public class DashboardController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+    @FXML
+    private void search(ActionEvent event) {
+    String searchText = searchfield.getText().trim().toLowerCase();
+
+  
+    loadPetsFromDB();
+
+    if (searchText.isEmpty()) {
+    
+        tableview.setItems(petList);
+        return;
+    }
+
+    ObservableList<Pet> filteredList = FXCollections.observableArrayList();
+
+    for (Pet pet : petList) {
+        if (pet.getName().toLowerCase().contains(searchText)) {
+            filteredList.add(pet);
+        }
+    }
+
+    tableview.setItems(filteredList);
+}
+
 }

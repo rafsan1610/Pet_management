@@ -37,7 +37,9 @@
       <Button fx:id="btn5" layoutX="22.0" layoutY="490.0" mnemonicParsing="false" onAction="#added" prefHeight="26.0" prefWidth="62.0" text="Add" />
       <Button fx:id="btn6" layoutX="115.0" layoutY="490.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="62.0" text="Delete" />
       <Button fx:id="btn7" layoutX="211.0" layoutY="490.0" mnemonicParsing="false" onAction="#update" text="Update" />
-      <TableView fx:id="tableview" layoutX="294.0" layoutY="101.0" prefHeight="365.0" prefWidth="644.0" style="-fx-background-color: #87CEFA;" />
+      <TableView fx:id="tableview" layoutX="294.0" layoutY="101.0" prefHeight="310.0" prefWidth="644.0" style="-fx-background-color: #87CEFA;" />
       <Button fx:id="btn8" layoutX="854.0" layoutY="503.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <TextField fx:id="searchfield" layoutX="303.0" layoutY="431.0" prefHeight="37.0" prefWidth="198.0" promptText="Search by pet's name" />
+      <Button fx:id="btn9" layoutX="517.0" layoutY="433.0" mnemonicParsing="false" onAction="#search" prefHeight="32.0" prefWidth="70.0" text="Search" />
    </children>
 </AnchorPane>

@@ -4,12 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/registration.fxml</file>
-            <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/Dashboard.fxml</file>
             <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/LoginController.java</file>
             <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/RegistrationController.java</file>
+            <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/Dashboard.fxml</file>
             <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/DashboardController.java</file>
             <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/Pet_management.java</file>
             <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/Pet.java</file>
+            <file>file:/D:/JavaFxCourse/Pet_management/src/pet_management/DatabaseConnection.java</file>
         </group>
     </open-files>
 </project-private>
